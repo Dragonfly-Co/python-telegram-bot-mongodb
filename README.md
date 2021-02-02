@@ -14,10 +14,10 @@ pip[in work]
 
 ```
 database = DataBase(
-    db_user = ...
-    db_password = ...,
-    db_name = ...,
+    connection_string = f'mongodb+srv://{config.DB_USER}:{config.DB_PASSWORD}@cluster0.gafny.mongodb.net/{config.DB_NAME}?retryWrites=true&w=majority',
+    db_name = config.DB_NAME,
 )
+
 
 @bot.message_handler(commands=['start'])
 def send_start_message(message):
